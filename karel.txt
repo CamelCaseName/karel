@@ -1,0 +1,62 @@
+/*
+F1 = moveForward();
+F2 = turnLeft();
+F3 = turnAround();
+F4 = turnRight();
+F5 = pickBeeper();
+F6 = dropBeeper();
+*/
+
+void karelsFirstProgram()
+{
+    addSlow();
+    
+}
+
+void addSlow(){
+    
+    repeat(224){
+        while(frontIsClear()){
+            if(onBeeper()){
+                pickBeeper();
+                turnAround();
+                while(frontIsClear()){
+                    moveForward();    
+                }
+            }
+            else{
+                dropBeeper();
+                moveForward();
+            }
+        }
+        changeLaneDown();
+        while(frontIsClear()){
+            if(onBeeper()){
+                pickBeeper();
+                moveForward();
+            }
+            else{
+                dropBeeper();
+                turnAround();
+                while(frontIsClear()){
+                    moveForward();    
+                }
+            }
+        }
+        changeLaneUp();        
+    }
+}
+
+void changeLaneUp(){
+    turnAround();
+    turnRight();
+    moveForward();
+    turnLeft();
+}
+
+void changeLaneDown(){
+    turnAround();
+    turnLeft();
+    moveForward();
+    turnRight();
+}

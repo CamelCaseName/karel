@@ -1,0 +1,12 @@
+void findTeddyBear(){
+    while(!onBeeper()){
+        search();
+    }
+}
+
+void search(){
+    while(frontIsClear()  && !onBeeper()){
+        moveForward();
+    }
+    turnLeft();
+}

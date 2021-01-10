@@ -1,0 +1,53 @@
+void addSlow(){
+    while(rightIsClear()||frontIsClear()){
+        addSlowdec();
+        if(rightIsClear()){
+            turnRight();
+            moveForward();
+            turnRight();
+            addSlowadd();
+            turnLeft();
+            moveForward();
+            turnLeft();
+        }
+        
+    }
+    turnAround();
+    while(frontIsClear()){
+        moveForward();
+        pickBeeper();
+    }
+    turnAround();
+}
+
+void addSlowadd(){
+    while(frontIsClear()){
+        if(onBeeper()){
+            pickBeeper();
+            moveForward();
+        }
+        else{
+            dropBeeper();
+            turnAround();
+            while(frontIsClear()){
+                moveForward();    
+            }
+        }
+    }
+}
+
+void addSlowdec(){
+    while(frontIsClear()){
+        if(onBeeper()){
+            pickBeeper();
+            turnAround();
+            while(frontIsClear()){
+                moveForward();    
+            }
+        }
+        else{
+            dropBeeper();
+            moveForward();
+        }
+    }
+}

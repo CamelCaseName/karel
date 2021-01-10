@@ -1,0 +1,83 @@
+void mowTheLawn(){ //ugly cuz not tileable towards the end
+    /*more compact version, but not totally correct
+    repeat(3){
+    while(beeperAhead()){
+    moveForward();
+    pickBeeper();
+    }
+    moveForward();
+    turnLeft();
+    moveForward();
+    turnLeft();
+    
+    while(beeperAhead()){
+    moveForward();
+    pickBeeper();
+    }
+    moveForward();
+    turnRight();
+    moveForward();
+    turnRight();
+    }
+    */
+    repeat(2){
+        while(beeperAhead()){
+            moveForward();
+            pickBeeper();
+        }
+        moveForward();
+        turnLeft();
+        moveForward();
+        turnLeft();
+        
+        while(beeperAhead()){
+            moveForward();
+            pickBeeper();
+        }
+        moveForward();
+        turnRight();
+        moveForward();
+        turnRight();
+    }
+    while(beeperAhead()){
+        moveForward();
+        pickBeeper();
+    }
+    moveForward();
+    turnLeft();
+    moveForward();
+    turnLeft();
+    
+    while(beeperAhead()){
+        moveForward();
+        pickBeeper();
+    }
+    moveForward();
+}
+
+void harvestTheField(){
+    repeat(2){
+        repeat(4){
+            moveForward();
+            pickBeeper();
+            turnRight();
+            moveForward();
+            turnLeft();
+        }
+        moveForward();
+        moveForward();
+        turnLeft();
+        moveForward();
+        moveForward();
+        turnLeft();
+        repeat(4){
+            moveForward();
+            pickBeeper();
+            turnRight();
+            moveForward();
+            turnLeft();
+        }
+        turnAround();
+    }
+    turnAround();
+}

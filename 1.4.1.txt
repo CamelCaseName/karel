@@ -1,0 +1,17 @@
+void stealOlympicFire(){
+    moveForward();
+    repeat(6){
+        turnLeft();
+        moveForward();
+        turnRight();
+        moveForward();
+    }
+    pickBeeper();
+    moveForward();
+    turnRight();
+    while(frontIsClear()){
+        moveForward();
+    }
+    turnLeft();
+    moveForward();
+}

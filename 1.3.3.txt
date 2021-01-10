@@ -1,0 +1,61 @@
+void cleanTheRoom(){
+    //cleanright();
+    repeat(5){
+        while(frontIsClear()){
+            if(onBeeper()){
+                pickBeeper();
+            }
+            moveForward();
+        }
+        turnLeft();
+        if(onBeeper()){
+            pickBeeper();
+        }
+        if(frontIsClear()){
+            moveForward();
+            turnLeft();
+        }
+        while(frontIsClear()){
+            if(onBeeper()){
+                pickBeeper();
+            }
+            moveForward();
+        }
+        if(onBeeper()){
+            pickBeeper();
+        }
+        turnRight();
+        if(frontIsClear()){
+            moveForward();
+            turnRight();
+        }
+    }
+}
+
+/*void cleanleft(){
+while(frontIsClear()){
+if(onBeeper()){
+pickBeeper();
+}
+}
+turnRight();
+if(frontIsClear()){
+moveForward();
+turnRight();
+cleanright();
+}
+}
+
+void cleanright(){
+while(frontIsClear()){
+if(onBeeper()){
+pickBeeper();
+}
+}
+turnLeft();
+if(frontIsClear()){
+moveForward();
+turnLeft();
+cleanleft();
+}
+}*/

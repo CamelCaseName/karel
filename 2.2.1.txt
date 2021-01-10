@@ -1,0 +1,5 @@
+void increment(){
+    pickBeeper();
+    moveForward();
+    dropBeeper();
+}

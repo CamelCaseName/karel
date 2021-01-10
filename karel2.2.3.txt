@@ -7,12 +7,6 @@ F5 = pickBeeper();
 F6 = dropBeeper();
 */
 
-void karelsFirstProgram()
-{
-    addSlow();
-    
-}
-
 void addSlow(){
     
     repeat(224){

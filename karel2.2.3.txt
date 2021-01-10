@@ -23,7 +23,9 @@ void addSlow(){
                 moveForward();
             }
         }
-        changeLaneDown();
+        turnRight();
+        moveForward();
+        turnRight();
         while(frontIsClear()){
             if(onBeeper()){
                 pickBeeper();
@@ -37,20 +39,8 @@ void addSlow(){
                 }
             }
         }
-        changeLaneUp();        
+        turnLeft();
+        moveForward();
+        turnLeft();
     }
-}
-
-void changeLaneUp(){
-    turnAround();
-    turnRight();
-    moveForward();
-    turnLeft();
-}
-
-void changeLaneDown(){
-    turnAround();
-    turnLeft();
-    moveForward();
-    turnRight();
 }

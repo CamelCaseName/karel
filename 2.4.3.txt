@@ -1,5 +1,5 @@
 void addFast(){
-    repeat(8){
+    repeat(9){
         if(onBeeper()){
             moveForward();
             if(onBeeper()){

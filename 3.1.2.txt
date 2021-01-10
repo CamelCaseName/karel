@@ -1,0 +1,24 @@
+void fetchTheStars(){
+    repeat(10){
+        turnLeft();
+        moveForward();
+        fetch();
+        dropBeeper();
+        turnLeft();
+        if(frontIsClear()){
+            moveForward();
+        }
+    }
+}
+
+void fetch(){
+    if(frontIsClear()){
+        moveForward();
+        fetch();
+    }
+    else if(!frontIsClear()){
+        pickBeeper();
+        turnAround();
+    }
+    moveForward();
+}

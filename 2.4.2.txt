@@ -1,0 +1,37 @@
+void quantize(){
+    while(frontIsClear()){
+        quantizeCollumn();
+        moveForward();
+    }
+    quantizeCollumn();
+}
+
+void quantizeCollumn(){
+    turnLeft();
+    repeat(5){
+        moveForward();
+    }
+    if(onBeeper()){
+        while(frontIsClear()){
+            moveForward();
+            if(!onBeeper()){
+                dropBeeper();
+            }
+        }
+        turnAround();
+        while(frontIsClear()){
+            moveForward();
+        }
+        turnLeft();
+    }
+    else{
+        turnAround();
+        while(frontIsClear()){
+            moveForward();
+            if(onBeeper()){
+                pickBeeper();
+            }
+        }
+        turnLeft();
+    }
+}

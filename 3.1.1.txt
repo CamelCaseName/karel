@@ -1,0 +1,30 @@
+void partyAgain(){
+    repeat(10){
+        turnLeft();
+        pickBeeper();
+        if(frontIsClear()){
+            moveForward();
+        }
+        else if(!frontIsClear()){
+            dropBeeper();
+            turnAround();
+        }
+        moveParty();
+        turnLeft();
+        if(frontIsClear()){
+            moveForward();
+        }
+    }
+}
+
+void moveParty(){
+    if(frontIsClear()){
+        moveForward();
+        moveParty();
+    }
+    else if(!frontIsClear()){
+        dropBeeper();
+        turnAround();
+    }
+    moveForward();
+}

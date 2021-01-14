@@ -1,0 +1,29 @@
+void layAndRemoveTiles(){ //nicht ganz korrekt, wird aber fertig und funktioniert, dreht nur leider das ganze feld um 90°
+    straight();
+}
+
+void straight(){
+    dropBeeper();
+    moveForward();
+    if(frontIsClear() && !beeperAhead()){
+        straight();
+    }
+    else{
+        corner();
+        turnRight();
+    }
+    pickBeeper();
+    moveForward();
+}
+
+void corner(){
+    turnLeft();
+    if(!beeperAhead()){
+        straight();
+    }
+    else{
+        dropBeeper();
+        moveForward();
+        turnRight();
+    }
+}

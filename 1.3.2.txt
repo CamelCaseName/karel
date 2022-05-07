@@ -1,15 +1,23 @@
-void repairTheStreet(){
-    repeat(9){
-        if(frontIsClear()){
-            moveForward();
-        }
+void repairTheStreet()
+{
+    repeat(8){
         if(rightIsClear()){
-            turnRight();
+            dropBeep();
             moveForward();
-            dropBeeper();
-            turnAround();
+        }else{
             moveForward();
-            turnRight();
+            if(!rightIsClear()){
+                moveForward();    
+            }
         }
     }
+    dropBeep();
+}
+void dropBeep(){
+    turnRight();
+    moveForward();
+    dropBeeper();
+    turnAround();
+    moveForward();
+    turnRight();
 }
